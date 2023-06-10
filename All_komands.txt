@@ -1,0 +1,26 @@
+Задание 1
+cd C:\Users\Константин\Desktop\Work\1T\docker\zadanie\1
+docker build -t zadanie1_image:latest .
+docker run -d -p 5432:5432 --name zadanie1_container zadanie1_image:latest
+docker exec -it zadanie1_container psql -U postgres
+postgres=# \l
+Запуск программы DBeaver, подключение к базе, выбор базы, схемы, таблицы, колонки, вкладка данные
+экспорт в файлы index_mass_202306092245.txt, index_mass_202306092247.csv
+Задание 2
+cd C:\Users\Константин\Desktop\Work\1T\docker\zadanie\1
+docker build -t zadanie1_image:latest .
+docker run -d -p 5432:5432 --name zadanie1_container zadanie1_image:latest
+docker exec -dit zadanie1_container cat
+docker exec -it zadanie1_container psql -U postgres
+postgres=# \l
+Задание 3
+cd C:\Users\Константин\Desktop\Work\1T\docker\zadanie\1
+docker build -t zadanie3_image:latest .
+docker run -it -d -p 5432:5432 --name zadanie3_container -v zadanie3_container:/dir/zadanie3_container zadanie3_image:latest
+docker exec -it zadanie3_container psql -U postgres
+postgres=# \l
+exit
+docker stop zadanie3_container  
+docker start zadanie3_container 
+docker exec -dit zadanie1_container cat
+postgres=# \l
